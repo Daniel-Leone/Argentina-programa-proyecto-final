@@ -1,0 +1,281 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+/* GENERAL */
+
+:root{
+    --cta-color: #4e6b66;
+    --extra-color: #ed834e;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+}
+
+h1, h2{
+  text-align: center;
+  color: var(--extra-color);
+}
+
+.title-section{
+    margin-bottom: 5vh;
+}
+
+/* MODAL */
+
+.modal{
+    width: max-content;
+    height: max-content;
+    max-width: 30vw;
+    position: fixed;
+    top: 13vh;
+    right: 2vw;
+    margin: auto;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    background-color: var(--cta-color);
+    color: var(--extra-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    transition: .5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.open-modal{
+    opacity: 1;
+}
+
+.loading{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-box{
+    width: 100%;
+    height: 20px;
+}
+
+#line{
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 10px;
+    background-color: var(--extra-color);
+}
+
+.init-bar{
+    animation: loading 4.8s forwards cubic-bezier(0,0,0,0);
+}
+
+@keyframes loading {
+    0%{
+        width: 0%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+/* NAVBAR */
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cta-color);
+    padding: 0 1rem;
+    margin-bottom: 5vh;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.developer-name{
+    color: var(--extra-color);
+}
+
+.logo{
+    height: 2rem;
+    width: 2rem;
+}
+
+/* ABOUT ME */
+
+.about-me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 20vh;
+    margin-bottom: 5vh;
+}
+
+#img-and-location{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+#img-and-location p{
+    padding: 0;
+}
+
+.img-profile {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  padding: .5rem;
+}
+
+.ubication-link{
+    text-decoration: none;
+    color: var(--extra-color);
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* KNOWLEDGE */
+
+.knowledge-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 5vh;
+}
+
+.knowledge-container img, #contact-container img{
+    margin-right: .5rem;
+}
+
+.ability{
+    min-width: 20vw;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* STUDIES */
+
+.studies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.studies a{
+    color: var(--extra-color);
+    text-decoration: none;
+}
+
+.underline{
+    color: var(--extra-color);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--extra-color);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.underline:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* CONTACT */
+
+#contact-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: .5rem 1rem;
+}
+
+#contact-container p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.smartphone, .email{
+    cursor: pointer;
+    transition: .2s;
+}
+
+.smartphone:hover, .email:hover{
+    color: var(--extra-color);
+}
+
+@media only screen and (min-width: 768px){
+    
+    /* GENERAL */
+
+    h1, h2, .ability{
+        font-size: 1.5rem;
+    }
+    
+    /* NAV */
+    
+    #nav{
+        padding: .5rem 1rem;
+    }
+
+    .logo{
+        height: 3rem;
+        width: 3rem;
+    }
+    
+    /* ABOUT ME */
+    
+    .about-me{
+        flex-direction: row;
+        margin-top: 25vh;
+    }
+    
+    .about-me p{
+        padding: 0 1rem;
+    }
+    
+    #img-and-location{
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .about-me p, .studies p, #contact-container p, #name-and-title p{
+        font-size: 1rem;
+    }
+}
